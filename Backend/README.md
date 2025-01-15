@@ -1,7 +1,6 @@
-# **Node do Zero**
+# **Book**
 
-Projeto contruído com o objetivo de sair do zero no conhecimento do Node.js.
-
+Projeto contruído com o objetivo Adicionar livros, podendo consultar, alterar e excluir.
 <!-- **[🔗 Clique aqui para acessar]()** -->
 
 ## **🛠 Tecnologias**
