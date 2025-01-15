@@ -1,0 +1,94 @@
+.emphasis {
+  margin:  0 auto;
+  padding: 2rem 0 6rem 0;
+  position: relative;
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 600px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.emphasis-title {
+  width: 80%;
+  padding: 0 0 3rem 0;
+  font-size: 3rem;
+}
+
+.emphasis-info p,
+.emphasis-info h2{
+  margin: 1rem auto;
+  width: 54%;
+  text-align: justify;
+}
+
+.emphasis-image {
+  background-color: transparent;
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}  
+
+
+.emphasis-button {
+  width: 62%;
+}
+
+.emphasis figure {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+
+@media screen and (max-width: 800px) {
+  .emphasis {
+    grid-template-columns: 1fr;
+    margin-bottom: 30rem;
+  }  
+  .emphasis-image {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+  }  
+  .emphasis-image img {
+    width: 60%;
+    object-fit: cover;
+    text-align: center;
+  }  
+}
+
+
+@media screen and (max-width: 500px) {
+  .emphasis {
+    margin-bottom: 25rem;
+  }
+  .emphasis-info, .emphasis-image img {
+    max-width: 75%;
+    margin: 0 auto;
+  }  
+  .emphasis-title {
+    margin: 0 auto;
+    width: 95%;
+    text-align: justify;
+  }
+
+  .emphasis-button {
+    width: 73%;
+  }
+
+  .emphasis-info p,
+  .emphasis-info h2 {
+    width: 95%;
+  }
+
+  .emphasis-info h2 {
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}

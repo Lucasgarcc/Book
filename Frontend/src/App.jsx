@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 // Pages Routes
 import Menu from './components/Menu/Menu';
+import Banner from './components/Banner/Banner'
+import Emphasis from './components/Emphasis/Emphasis'
+import Detail from './components/Emphasis/Detail/Detail'
 import Footer from './components/Footer/Footer'
 
 function App({}) {
@@ -90,6 +93,19 @@ function App({}) {
   return (
     <div className="App">
       <Menu />
+        <Routes>  
+          <Route
+            path='/'
+            element ={
+              <>
+                <Banner />
+                <Detail />
+                <Emphasis />
+              </>
+              
+            } 
+          />
+        </Routes>
       <Footer />
     </div>
   );

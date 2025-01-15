@@ -1,0 +1,30 @@
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 1.2em;
+  font-size: .9em;
+  width: 75%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: #EB5A3C;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+  background-color: #6dff91;
+  color: #091035;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    width: 100%;
+  }
+  
+}
