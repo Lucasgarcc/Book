@@ -1,0 +1,27 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node --watch --no-warnings server.js",
+    "build": "echo 'Build step not needed for Node.js apps.'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Projeto contruído com o objetivo de sair do zero no conhecimento do Node.js.",
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "book": "file:",
+    "fastify": "^5.1.0",
+    "pg": "^8.13.1",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "dotenv": "^16.4.5"
+  }
+}
