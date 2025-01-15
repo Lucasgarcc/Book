@@ -1,0 +1,25 @@
+.search {
+  padding: 2rem;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-field {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-field input {
+  width: 100%; 
+  border-color: #0f0f0f;
+  border-radius: .3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .search {
+    flex-direction: column;
+  }  
+}

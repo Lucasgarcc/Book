@@ -1,0 +1,27 @@
+.suspense-list {
+  margin: .7rem 0;
+
+  label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    color: #121212;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  select {
+    padding: .5rem;
+    border: 1px solid #dedede;
+    color: #252525;
+    width: 102%;
+    height: 60px;
+    font-size: 1.1rem; 
+    border-radius: .5rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
+    transition: 0.2s;
+  }
+
+}
+

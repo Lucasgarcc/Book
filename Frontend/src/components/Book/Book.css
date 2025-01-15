@@ -1,0 +1,140 @@
+.book {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+
+  .header {
+    position: relative;
+    inset: 0 2rem;
+    z-index: 1;
+    max-width: 100%;
+    background-color: #fff5f5;
+    border-radius: .6rem;
+    margin-bottom: -2rem;
+    border-radius: .6rem;
+
+    img {
+      margin: 0 auto;
+      width: 50%;
+    }
+  }
+
+
+  .footer {
+    position: relative;
+    inset: 0 2rem;
+    display: flex;
+    width: 88%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: .3rem .3rem .9rem rgba(26, 26, 26, 0.363);
+
+    h4 {
+      width: 25ch;
+      margin-bottom: -1rem;
+      text-align: left;
+      color: #6278f7;
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+      font-weight: bold;
+    }
+
+    h5 {
+      padding: 0 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.4rem;
+      color: #212121;
+    }
+
+    p {
+      max-width: 27ch;
+      line-height: .959rem;
+      color: #212121;
+      font-size: 1rem;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: lighter;
+    }
+   
+  }
+}
+
+.favorite {
+  position: relative;
+  inset: 2rem 7rem 0 ;
+  color: #212121;
+}
+
+.delete {
+  padding-bottom: 1rem;
+  width: 200px;
+  height: 30px;
+  position: relative;
+  inset: -1rem 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  p {
+    color: #2e2e2e;
+    font-size: 1.225rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .icon-delete {
+    cursor: pointer;
+  }
+}
+
+
+.book figure {
+  position: relative;
+  margin-bottom: 2rem;
+  object-fit: cover;
+  inset: 3rem -1.8rem 0;
+  width: 90%;
+}
+
+.icon-delete {
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+  .favorite {
+    position: absolute;
+    inset: 2rem 13rem 0 ;
+  }
+
+  .delete {
+    position: absolute;
+    inset: 30rem 8rem 0;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+
+.book {
+  margin: 0 auto;
+  padding-left: 0;
+  position: relative;
+  inset: 0 0 0 -2rem;
+  max-width: 100%;
+}
+}

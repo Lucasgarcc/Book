@@ -1,0 +1,68 @@
+.banner  {
+  background-color: #6278f7;
+  margin: 0 auto;
+  max-width: 100%;
+  img {
+    padding: 2rem 0;
+    position: relative;
+    inset:  0 35.4rem;
+    max-width: 40%;
+    object-position: 7rem;
+  }
+
+}
+
+
+.banner figure {
+  position: relative;
+  z-index: 1000;
+  padding: 0;
+  background: linear-gradient(170deg, #EB5A3C, #ff7118, #b95516);
+  ;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1900px ) {
+  .banner {
+    img {
+      inset: 1rem 0 0 20rem;
+      object-position: 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1100px ) {
+  .banner {
+    max-width: 100%;
+    img {
+
+      inset: 1rem 0 0 10rem;
+      object-position: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px ) {
+  .banner {
+    max-width: 100%;
+    img {
+
+      inset: 1rem 0 0 6rem;
+      object-position: 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 360px ) {
+  .banner {
+    max-width: 100%;
+    img {
+
+      inset: 1rem 0 0 4rem;
+      object-position: 0;
+    }
+  }
+}
