@@ -1,19 +1,39 @@
 .banner  {
-  background-color: #6278f7;
   margin: 0 auto;
   max-width: 100%;
   img {
     padding: 2rem 0;
     position: relative;
-    inset:  0 35.4rem;
+    inset:  0 18rem;
     max-width: 40%;
-    object-position: 7rem;
+    object-position: 3rem;
+  }
+  h1 {
+    padding: 1rem;
+    color:#662801;
+    width: 25ch;
+    text-align: left;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+  }
+  .title-banner {
+    color:#fff;
+    font-size: 3rem;
+    text-transform: uppercase;
   }
 
+  .detail-title {
+    color: #03e289; 
+    font-size: 3.5rem;
+  }
 }
 
 
 .banner figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   position: relative;
   z-index: 1000;
   padding: 0;
@@ -26,7 +46,7 @@
 @media screen and (max-width: 1900px ) {
   .banner {
     img {
-      inset: 1rem 0 0 20rem;
+      inset: 1rem 0 0 7rem;
       object-position: 0;
     }
   }
@@ -38,7 +58,7 @@
     max-width: 100%;
     img {
 
-      inset: 1rem 0 0 10rem;
+      inset: 1rem 0 0 1rem;
       object-position: 0;
     }
   }
@@ -52,6 +72,18 @@
       inset: 1rem 0 0 6rem;
       object-position: 0;
     }
+    h1 {
+      font-size: 1rem;
+    }
+    .title-banner {
+      color:#fff;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+  }
+ 
+  .banner figure {
+    flex-direction: column;
   }
 }
 

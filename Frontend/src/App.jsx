@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { GlobalContext } from './components/Context/GlobalContext';
+import UseFetch from './components/Hooks/UseFetch/UseFetch';
 
 // Pages Routes
 import Menu from './components/Menu/Menu';
@@ -20,45 +20,61 @@ function App({}) {
       id: uuidv4(),
       favorite: false,
       name: 'Ação',
-      color: '#d9f7e9',
+      color: '#5CB338',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Aventura',
-      color: '#ebfbff',
+      color: '#80C4E9',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Romance',
-      color: '#f0f8e2',
+      color: '#CB9DF0',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Desenvolvimento Pessoal',
-      color: '#fde7e8',
+      color: '#F93827',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Tecnologia',
-      color: '#fae5f5',
+      color: '#EC8305',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Empreendedorismo',
-      color: '#fff5d9',
+      color: '#FABC3F',
     },
     {
       id: uuidv4(),
       favorite: false,
       name: 'Ficção Científica',
-      color: '#ffeedf',
+      color: '#173B45',
     },
   ]);
+
+  const {data, loading, error, request, setLoading } = UseFetch();
+  const url = `https://book-ideal-api.onrender.com/books`
+
+ // Busca inicial de dados
+ React.useEffect(() => {
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      await request(url);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  fetchData();
+}, [request]);
 
   const handleColorCategory = (color, id) => {
     setCategories(
@@ -86,85 +102,92 @@ function App({}) {
   };
 
   const toggleFavorite = (id) => {
+    // Atualiza o estado de 'book'
     setBook(
-      book.map((book) =>
+      data.map((book) =>
         book.id === id ? { ...book, favorite: !book.favorite } : book
       )
     );
-  };
-
+  };  
+  
   return (
     <div className="App">
       <Menu />
       <Routes>
-        {/* Página principal */}
         <Route
           path="/"
           element={
             <>
               <Banner />
               <Detail />
-              <Emphasis 
-                img={book.length > 0 ? book[0].image : null}
-                title={book.length > 0 ? book[0].name : 'Nenhum livro disponível'}
-                description={book.length > 0 ? book[0].description : 'Adicione um livro para vê-lo em destaque.'}
+              {loading && <p style={{ color: '#000' }}>Carregando...</p>}
+              {error && <span style={{ color: 'red' }}>{error}</span>}
+              {!loading && data && ( <Emphasis
+                img={data.length > 0 ? data[data.length - 1].image : null}
+                title={data.length > 0 ? data[data.length -1].name : 'Nenhum livro disponível'}
+                description={
+                  data.length > 0
+                    ? data[data.length - 1].description
+                    : 'Adicione um livro para vê-lo em destaque.'
+                }
                 categories={categories.map((item) => item.name)}
                 registerBook={addNewBook}
                 registerCategory={addNewCategory}
               />
+              )}
 
-              
               <h2 className="title">Recomenda Livros</h2>
-              {categories.map((category) => (
-                <Category
-                  key={category.id}
-                  category={category}
-                  title={category.name}
-                  book={book}
-                  deleteCategory={deleteCategory}
-                  changeColorCategory={handleColorCategory}
-                  toggleFavorite={toggleFavorite}
-                />
-              ))}
+              {loading && <p style={{ color: '#000' }}>Carregando...</p>}
+              {error && <span style={{ color: 'red' }}>{error}</span>}
+              {!loading && data && (
+                categories.map((category) => (
+                  <Category
+                    key={category.id}
+                    category={category}
+                    title={category.name}
+                    book={data.filter((b) => b.category === category.name)}
+                    deleteCategory={deleteCategory}
+                    changeColorCategory={handleColorCategory}
+                    toggleFavorite={toggleFavorite}
+                  />
+                ))
+              )}
             </>
           }
         />
-        {/* Página de cadastro */}
         <Route
           path="/cadastro"
           element={
+            <Register
+              categories={categories.map((item) => item.name)}
+              registerBook={addNewBook}
+              registerCategory={addNewCategory}
+            />
+          }
+        />
+        <Route
+          path="/buscar"
+          element={
             <>
-              <Register
-                categories={categories.map((item) => item.name)}
-                registerBook={addNewBook}
-                registerCategory={addNewCategory}
-              />
+              <Search />
+              {loading && <p style={{ color: '#000' }}>Carregando...</p>}
+              {error && <span style={{ color: 'red' }}>{error}</span>}
+              {!loading && data && (
+                categories.map((category) => (
+                  <Category
+                    key={category.id}
+                    category={category}
+                    title={category.name}
+                    book={data.filter((b) => b.category === category.name)}
+                    deleteCategory={deleteCategory}
+                    changeColorCategory={handleColorCategory}
+                    toggleFavorite={toggleFavorite}
+                  />
+                ))
+              )}
             </>
           }
         />
-
-        {/* Página de Busca */}
-        <Route
-          path= "/buscar"
-          element= {
-            <>
-              <Search /> 
-              {categories.map((category) => (
-                <Category
-                  key={category.id}
-                  category={category}
-                  title={category.name}
-                  book={book}
-                  deleteCategory={deleteCategory}
-                  changeColorCategory={handleColorCategory}
-                  toggleFavorite={toggleFavorite}
-                />
-              ))}
-            </>
-
-          } 
-        />  
-
       </Routes>
       <Footer />
     </div>
