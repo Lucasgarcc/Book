@@ -42,10 +42,11 @@
       width: 25ch;
       margin-bottom: -1rem;
       text-align: left;
-      color: #6278f7;
+      color: #084a96;
       font-size: 1.1rem;
       line-height: 1.3rem;
       font-weight: bold;
+      font-family: 'Poppins', sans-serif;
     }
 
     h5 {
@@ -54,6 +55,7 @@
       font-weight: 500;
       line-height: 1.4rem;
       color: #212121;
+      font-family: 'Poppins', sans-serif;
     }
 
     p {
