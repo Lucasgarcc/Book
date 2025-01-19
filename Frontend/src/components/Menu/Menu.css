@@ -23,7 +23,7 @@
 }
 
 .menu-item:hover{
-  color: #2b2b2b;
+  color: #ff3300;
 }
 
 .menu-item.active{
@@ -32,4 +32,231 @@
 
 .menu img {
   width: 100%;
+}
+
+
+@media (width <= 767px) { /* max-width:  */
+
+
+
+/* adiciona o detalhe do icone ativo*/
+.menu li {
+  position: relative; /* Necessário para posicionar o ::before */
+}
+  
+.menu li a::before {
+  content: "";
+  position: absolute;
+  width: 70%; /* Largura inicial da linha */
+  height: 3.5px; /* Altura da linha */
+  bottom: -10px; /* Ajuste conforme necessário */
+  left: 1%;
+  border-radius: .5rem;
+  background-color: var(--primeira-cor-seg-detale); /* Cor da linha */
+  transform: scaleX(0); /* Inicialmente escondida */
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+  
+.menu li:hover a::before {
+  transform: scaleX(1); /* Mostra a linha ao passar o mouse */
+}
+  
+.menu li.active a::before {
+  transform: scaleX(1); /* Linha permanece visível ao clicar */
+}
+  
+.menu-item{
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #ff7627
+}
+
+/* show menu */
+.show-menu {
+  bottom: 0;
+}
+
+}
+
+
+@media screen and (max-width: 898px) {
+
+  .menu {
+    padding-top: 3rem;
+    padding-right: 2rem;
+    gap: 3rem;
+    align-self: flex-start;
+  }
+
+  .menu-item {
+    width: 50%;
+  }
+
+  .nav {
+    padding-bottom: 3rem;
+    gap: 0;
+  }
+
+  .nav-menu-icon {
+    display: block;
+    left: 9rem;
+  }
+
+  .menu-content {
+    display: none; /* Escondido por padrão */
+    transition: 0.4s ease;
+  }
+  .nav-logo {
+    padding: 2rem;
+  }
+
+  .menu.show-menu {
+    padding: 1rem 1.5rem 2rem;
+    width: 57%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 71%;
+    position: fixed;
+    right: 0;
+    top: 0rem;
+    background-color: #1E1D1D;
+    box-shadow: 0 -1px 4px rgba(51, 51, 51, 0.15);
+    border-radius: 1.5rem 0 1.5rem 0;
+    transition: .3s;
+    z-index: 5;
+}
+
+  .menu-item {
+    width: 60%;
+  }
+
+  /* Ícone do menu (hambúrguer) */
+  
+  .nav-menu-icon {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 25px;
+    z-index: var(--z-fixed);
+  }
+
+  /* Linhas do ícone */
+  .nav-menu-icon span {
+    display: block;
+    height: 3px;
+    background-color: var(--container-cor); /* Ou defina a cor que deseja */
+    margin: 5px 0;
+    border-radius: 4rem;
+    transition: 0.4s;
+    z-index: var(--z-fixed);
+  }
+
+  .bar1 {
+    width: 24px;;
+  }
+
+  .nav-menu-icon .bar2 {
+    background-color: var(--primeira-cor-seg-detale);
+  }
+  
+
+  .bar3 {
+    position: relative;
+    left: 23%;
+    width: 24px;
+  }
+
+  /* Quando o ícone está ativo (hambúrguer vira X) */
+  .nav-menu-icon.active .bar1 {
+    transform: translateY(-4px) rotate(320deg);
+    background-color: var(--primeira-cor-seg-detale);
+    z-index: var(--z-fixed);
+  }
+
+  .nav-menu-icon.active .bar2 {
+    opacity: 0; /* Esconde a barra do meio */
+    z-index: var(--z-fixed);
+  }
+
+  .nav-menu-icon.active .bar3 {
+    transform: translateY(-20px) translateX(-6px) rotate(41deg);
+  }
+
+  .nav-open,.nav-toggle  {
+    color: var(--text-cor);
+  }
+
+  /* adiciona o detalhe do icone ativo*/
+  .menu li.active::before {
+    content: '';
+    position: relative;
+    inset: .7rem -3rem; /* Ajuste esses valores conforme necessário */
+    display: block;
+    width: 20px;
+    height: 4px;
+    border-radius: 1.5px;
+    background-color: var(--primeira-cor);
+  }
+
+  .menu li a::before {
+    content: "";
+    position: absolute;
+    width: 9%; /* Largura inicial da linha */
+    height: 3.8px; /* Altura da linha */
+    bottom: 6px;/* Ajuste conforme necessário */
+    bottom: 6px; 
+    left: -15%;
+    border-radius: .5rem;
+    background-color: var(--primeira-cor-seg-detale); /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente escondida */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+  }
+}
+
+
+/* Estilo para o menu mobile */
+.menu-content {
+  display: none; /* Escondido por padrão */
+  transition: 0.4s ease;
+}
+
+.menu.show-menu {
+  display: block; /* Exibe o menu */
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #1E1D1D;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.nav-menu-icon {
+  cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 25px;
+}
+
+.nav-menu-icon span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 4rem;
+}
+
+.nav-menu-icon.active .bar1 {
+  transform: translateY(-4px) rotate(45deg);
+}
+
+.nav-menu-icon.active .bar2 {
+  opacity: 0;
+}
+
+.nav-menu-icon.active .bar3 {
+  transform: translateY(4px) rotate(-45deg);
 }

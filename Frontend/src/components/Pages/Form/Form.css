@@ -3,6 +3,7 @@
   border-radius: .325rem;
   display: flex;
   gap: 2rem;
+  font-family: 'Roboto', sans-serif;
 
   form {
     margin: 0 auto;
