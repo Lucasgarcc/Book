@@ -1,16 +1,14 @@
 .book {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 280px;
+  max-width: 300px;
 
   .header {
     position: relative;
-    inset: 0 2rem;
     z-index: 1;
-    max-width: 100%;
+    width: 334px;
     background-color: #fff5f5;
     border-radius: .6rem;
     margin-bottom: -2rem;
@@ -25,9 +23,8 @@
 
   .footer {
     position: relative;
-    inset: 0 2rem;
     display: flex;
-    width: 88%;
+    width: 100%;
     height: max-content;
     flex-direction: column;
     justify-content: center;
@@ -103,10 +100,11 @@
 
 
 .book figure {
+  margin: 0 auto;
   position: relative;
   margin-bottom: 2rem;
   object-fit: cover;
-  inset: 3rem -1.8rem 0;
+  inset: 3rem  0;
   width: 90%;
 }
 
@@ -117,7 +115,17 @@
 
 
 @media screen and (max-width: 400px) {
+  .book {
+    width: 100%;
 
+    .header {
+      width: 100%;
+    }
+
+    .footer {
+      width: 90%;
+    }
+  }
   .favorite {
     position: absolute;
     inset: 2rem 13rem 0 ;
@@ -130,13 +138,30 @@
 }
 
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 397px) {
+  .book {
+    
+    .header {
+      width: 100%;
+    }
+    .footer {
+      text-align: center;
+      gap: 3rem;
+    }
+    h4 {
+      padding-top: 1rem;
+    }
+  }
 
-.book {
-  margin: 0 auto;
-  padding-left: 0;
-  position: relative;
-  inset: 0 0 0 -2rem;
-  max-width: 100%;
+
+  .favorite {
+    position: absolute;
+    inset: 2.4rem 15rem 0 ;
+  }
+
+  .delete {
+    position: absolute;
+    inset: 25.4rem 9.4rem 0;
+  }
 }
-}
+

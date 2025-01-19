@@ -1,9 +1,15 @@
 .category {
+  margin: 0 auto;
   padding: 2rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* Garante que o conteúdo ocupe a altura total da tela */
 
   h3 {
-    align-self: flex-start;
+    text-align: center;
     font-size: 2rem;
     display: inline-block;
     border-bottom: .3rem solid ;
@@ -11,12 +17,10 @@
   }
 
   .category-books {
-    width: fit-content;
-    height: 50%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
   }
 
   .input-color {
@@ -25,10 +29,8 @@
     border-radius: .2rem;
     background-color: #ffffff11;
     border-color: #bec8ff;
-
   }
   
-
 }
 
 .category::after {
@@ -45,8 +47,6 @@
 }
 
 
-
-
 .category::before {
   content:'' ;
   display: block;
@@ -61,7 +61,13 @@
 }
 
 @media screen and (max-width: 1600px){
- .category-books {
+  .category-books {
     flex-direction: column;
  }
+}
+
+@media screen and (max-width: 400px) {
+  .category {
+    padding: 0;
+  }
 }
