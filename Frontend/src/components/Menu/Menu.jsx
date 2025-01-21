@@ -5,111 +5,85 @@ import './Menu.css';
 import logo from '../../assets/imagens/logo.svg';
 
 const Menu = ({ onNavigate }) => {
-  // const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 800px)').matches);
-  // const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 800px)').matches);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(window.matchMedia('(max-width: 800px)').matches);
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia('(max-width: 800px)').matches);
+    };
 
-  //   window.addEventListener('resize', handleResize);
-    
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  // const toggleMenu = () => {
-  //   setMenuOpen(!menuOpen);
-  // };
+  const toggleMenu = () => {
+    setMenuOpen(prevState => !prevState);
+  };
 
-  // {isMobile ? (
-  //   <nav className={`menu ${menuOpen ? 'active' : ''}`}>
-  //     <div>
-  //       <img src={logo} alt="Logo" />
-  //     </div>
-  //     <IconeMenu onClick={toggleMenu} />
-  //     {menuOpen && (
-  //       <div className="menu-content show-menu">
-  //         <ItemMenu
-  //           className="menu-item"
-  //           link="Home"
-  //           href="/"
-  //           useRouter={true}
-  //         />
-  //         <ItemMenu
-  //           className="menu-item"
-  //           link="Cadastro"
-  //           href="/cadastro"
-  //           useRouter={true}
-  //         />
-  //         <ItemMenu
-  //           className="menu-item"
-  //           link="Buscar"
-  //           href="/buscar"
-  //           useRouter={true}
-  //         />
-  //       </div>
-  //     )}
-  //   </nav>
-  // ) : (
-  //   <nav className="menu">
-  //     <div>
-  //       <img src={logo} alt="Logo" />
-  //     </div>
-  //     <ul>
-  //       <ItemMenu
-  //         className="menu-item"
-  //         link="Home"
-  //         href="/"
-  //         useRouter={true}
-  //       />
-  //       <ItemMenu
-  //         className="menu-item"
-  //         link="Cadastro"
-  //         href="/cadastro"
-  //         useRouter={true}
-  //       />
-  //       <ItemMenu
-  //         className="menu-item"
-  //         link="Buscar"
-  //         href="/buscar"
-  //         useRouter={true}
-  //       />
-  //     </ul>
-  //   </nav>
-  // )}
+  const handleClick = (href) => {
+    onNavigate(href);
+    if (isMobile) {
+      setMenuOpen(false);
+    }
+  };
 
   return (
-    <>
-      <nav className="menu">
-        <div>
-          <img src={logo} alt="Logo" />
-        </div>
-        <IconeMenu />
-        <ul>
+    <nav className={`menu ${isMobile && menuOpen ? 'active' : ''}`}>
+      <div>
+        <img src={logo} alt="Logo" />
+      </div>
+      {isMobile && <IconeMenu onClick={toggleMenu} />}
+      {isMobile && menuOpen ? (
+        <div className="menu-content show-menu">
           <ItemMenu
             className="menu-item"
             link="Home"
             href="/"
+            onClick={() => handleClick('/')}
             useRouter={true}
           />
           <ItemMenu
             className="menu-item"
             link="Cadastro"
             href="/cadastro"
+            onClick={() => handleClick('/cadastro')}
             useRouter={true}
           />
           <ItemMenu
             className="menu-item"
             link="Buscar"
             href="/buscar"
+            onClick={() => handleClick('/buscar')}
+            useRouter={true}
+          />
+        </div>
+      ) : !isMobile ? (
+        <ul>
+          <ItemMenu
+            className="menu-item"
+            link="Home"
+            href="/"
+            onClick={() => handleClick('/')}
+            useRouter={true}
+          />
+          <ItemMenu
+            className="menu-item"
+            link="Cadastro"
+            href="/cadastro"
+            onClick={() => handleClick('/cadastro')}
+            useRouter={true}
+          />
+          <ItemMenu
+            className="menu-item"
+            link="Buscar"
+            href="/buscar"
+            onClick={() => handleClick('/buscar')}
             useRouter={true}
           />
         </ul>
-      </nav>
-    </>
+      ) : null}
+    </nav>
   );
 };
 
