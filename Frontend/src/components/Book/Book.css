@@ -76,7 +76,7 @@
 
 .delete {
   padding-bottom: 1rem;
-  width: 200px;
+  width: 150px;
   height: 30px;
   position: relative;
   inset: -1rem 7rem;
@@ -132,6 +132,7 @@
   }
 
   .delete {
+    width: 10px;
     position: absolute;
     inset: 30rem 8rem 0;
   }
@@ -156,12 +157,13 @@
 
   .favorite {
     position: absolute;
-    inset: 2.4rem 15rem 0 ;
+    inset: 2.4rem 16.5rem 0 ;
   }
 
   .delete {
+    width: 20px;
     position: absolute;
-    inset: 25.4rem 9.4rem 0;
+    inset: 27rem 16.9rem 0;
   }
 }
 

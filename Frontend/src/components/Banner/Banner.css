@@ -53,12 +53,12 @@
 }
 
 
-@media screen and (max-width: 1100px ) {
+@media screen and (max-width: 1300px ) {
   .banner {
     max-width: 100%;
     img {
 
-      inset: 1rem 0 0 1rem;
+      inset: 1rem 0 0 -1rem;
       object-position: 0;
     }
   }

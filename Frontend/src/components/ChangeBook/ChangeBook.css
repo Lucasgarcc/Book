@@ -9,7 +9,7 @@
     padding: 4.5rem 5.5rem;
     max-width: 100%;
     border-radius: 1.5rem ;
-    height: 800px;
+    height: 830px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -20,7 +20,8 @@
 
   h2 {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
+    text-align: start;
+    width: 25ch;
     text-transform: uppercase;
     font-size: 1.5rem;
     color: #131313;
@@ -37,7 +38,7 @@
     align-items: center;
 
     form {
-      height: 900px;
+      height: 800px;
       max-width: 80%;
       justify-content: center;
       align-items: center;
@@ -63,7 +64,7 @@
     h2 {
       padding: 2rem 0 0 0;
       font-size: 1.2rem;
-      max-width: 100%;
+      width: 100%;
     }
     
   }

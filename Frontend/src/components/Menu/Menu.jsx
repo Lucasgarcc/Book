@@ -5,7 +5,7 @@ import './Menu.css';
 import logo from '../../assets/imagens/logo.svg';
 
 const Menu = ({ onNavigate }) => {
-  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 800px)').matches);
+  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 878px)').matches);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Menu = ({ onNavigate }) => {
 
   return (
     <nav className={`menu ${isMobile && menuOpen ? 'active' : ''}`}>
-      <div>
+      <div className='logo'>
         <img src={logo} alt="Logo" />
       </div>
       {isMobile && <IconeMenu onClick={toggleMenu} />}
