@@ -2,7 +2,7 @@ import React from 'react';
 import './Emphasis.css';
 import ButtonModal from '../Button/ButtonModal/ButtonModal';
 
-const Emphasis = ({ img, title, description, categories, registerBook, registerCategory }) => {
+const Emphasis = ({ img, title, description, categories, data }) => {
   return (
     <div className="emphasis">
       <div className='emphasis-info'>
@@ -12,8 +12,7 @@ const Emphasis = ({ img, title, description, categories, registerBook, registerC
         <div className='emphasis-button'>
           <ButtonModal
             categories={categories} 
-            registerBook={registerBook}
-            registerCategory={registerCategory}
+            changeBook={data}
           />
         </div>
       </div>
