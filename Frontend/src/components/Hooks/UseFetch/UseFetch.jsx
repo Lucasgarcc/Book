@@ -19,11 +19,15 @@ const UseFetch = () => {
 
       // Verifica se a resposta é válida
       if (!resp.ok) {
-        throw new Error(`Fetch failed: ${resp.status} - ${resp.statusText}`);
+        const errorMenssage = `Fetch failed: ${resp.status} - ${resp.statusText}`;
+    
+        throw new Error(errorMenssage);
       }
-
-      json = await resp.json(); // Obtém a resposta em JSON
-      setData(json); // Define os dados no estado
+      
+      if (resp.status !== 204) {
+        json = await resp.json(); // Obtém a resposta em JSON
+        setData(json); // Define os dados no estado
+      }
 
       return { resp, json }; // Retorna a resposta e os dados JSON
     } catch (error) {
@@ -34,7 +38,7 @@ const UseFetch = () => {
     }
   }, []);
 
-  return { data, error, loading, request, setLoading }; // Retorna os parâmetros do hook
+  return { data, error, loading, request, setLoading, setData }; // Retorna os parâmetros do hook
 };
 
 export default UseFetch;

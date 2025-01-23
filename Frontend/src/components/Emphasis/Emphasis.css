@@ -38,13 +38,14 @@
 }
 
 .emphasis figure {
+  padding-bottom: 3rem;
   background-color: transparent;
   position: relative;
   z-index: 1;
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .emphasis {
     grid-template-columns: 1fr;
     margin-bottom: 30rem;
@@ -57,7 +58,7 @@
     text-align: center;
   }  
   .emphasis-image img {
-    width: 60%;
+    width: 43%;
     object-fit: cover;
     text-align: center;
   }  

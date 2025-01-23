@@ -16,7 +16,7 @@ const AppRoutes = ({
   error,
   handleColorCategory,
   addNewBook,
-  deleteCategory,
+  deleteBook,
   addNewCategory,
   toggleFavorite,
 }) => {
@@ -56,6 +56,7 @@ const AppRoutes = ({
                       categories={categories.map((item) => item.name)}
                       registerBook={addNewBook}
                       registerCategory={addNewCategory}
+                      
                     />
                   )}
                   <h2 className="title">Recomenda Livros</h2>
@@ -69,7 +70,7 @@ const AppRoutes = ({
                         category={category}
                         title={category.name}
                         book={data.filter((b) => b.category === category.name)}
-                        deleteCategory={deleteCategory}
+                        deleteBook={deleteBook}
                         changeColorCategory={handleColorCategory}
                         toggleFavorite={toggleFavorite}
                       />
@@ -91,7 +92,10 @@ const AppRoutes = ({
               path="/buscar"
               element={
                 <>
-                  <Search />
+                  <Search
+                    data={data}
+                    categories={categories.map((item) => item.name)}
+                  />
                   {loading && <p style={{ color: "#000" }}>Carregando...</p>}
                   {!loading &&
                     data &&
@@ -101,7 +105,7 @@ const AppRoutes = ({
                         category={category}
                         title={category.name}
                         book={data.filter((b) => b.category === category.name)}
-                        deleteCategory={deleteCategory}
+                        deleteBook={deleteBook}
                         changeColorCategory={handleColorCategory}
                         toggleFavorite={toggleFavorite}
                       />

@@ -1,6 +1,5 @@
 .menu {
   display: flex;
-  padding: 0 0 1rem 2rem;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
@@ -15,18 +14,23 @@
   list-style: none;
 }
 
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
 .menu-item {
   margin: 1;
   list-style-type: none;
   text-decoration: none;
   font-weight: 550;
   font-family: "Open Sans", sans-serif;
-  color: rgb(28, 26, 26);
+  color: rgb(23, 23, 23);
   cursor: pointer;
 }
 
 .menu-item:hover {
-  color: #ff3300;
+  color: #ff6a00;
 }
 
 .menu-item.active {
@@ -34,7 +38,7 @@
 }
 
 .menu img {
-  max-width: 50%;
+  max-width: 60%;
 }
 
 /* Adiciona o detalhe do ícone ativo */
@@ -87,7 +91,7 @@
 }
 
 /* Ajustes para o menu móvel */
-@media screen and (max-width: 898px) {
+@media screen and (max-width: 800px) {
   .menu {
     padding-top: 3rem;
     padding-right: 2rem;
@@ -95,6 +99,15 @@
     align-self: flex-start;
   }
 
+  .logo {
+    width: 100px;
+  }
+
+  .menu img {
+    max-width: 90%;
+  }
+  
+  
   .menu-item {
     width: 50%;
   }
@@ -108,7 +121,7 @@
   .menu.active .menu-content  {
     margin: 0 auto;
     padding: 1rem 1.5rem 2rem;
-    width: 57%;
+    width: 47%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,22 +211,22 @@
     width: 40px;
     height: 4px;
     border-radius: 1.5px;
-    background-color: #ff3300;
   }
 
   .menu li a::before {
-    content: "";
+    content: "🕮";
     position: absolute;
     width: 10%;
     height: 3.8px;
-    bottom: 6px;
-    left: -15%;
+    bottom: 22px;
+    left: -60%;
     border-radius: .5rem;
-    background-color: #ff3300;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
   }
+  
 }
+
 
 /* Estilo para o menu mobile */
 .menu-content {
