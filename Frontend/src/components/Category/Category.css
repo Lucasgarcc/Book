@@ -9,6 +9,7 @@
   /* Garante que o conteúdo ocupe a altura total da tela */
 
   h3 {
+    padding: 1rem;
     text-align: center;
     font-size: 2rem;
     display: inline-block;
