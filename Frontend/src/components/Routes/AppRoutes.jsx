@@ -19,6 +19,7 @@ const AppRoutes = ({
   deleteBook,
   addNewCategory,
   toggleFavorite,
+
 }) => {
   return (
     <>
@@ -94,22 +95,13 @@ const AppRoutes = ({
                 <>
                   <Search
                     data={data}
-                    categories={categories.map((item) => item.name)}
+                    deleteBook={deleteBook}
+                    categories={categories}
+                    loading={loading}
+                    error={error}
+                    handleColorCategory={handleColorCategory}
+                    toggleFavorite={toggleFavorite}
                   />
-                  {loading && <p style={{ color: "#000" }}>Carregando...</p>}
-                  {!loading &&
-                    data &&
-                    categories.map((category) => (
-                      <Category
-                        key={category.id}
-                        category={category}
-                        title={category.name}
-                        book={data.filter((b) => b.category === category.name)}
-                        deleteBook={deleteBook}
-                        changeColorCategory={handleColorCategory}
-                        toggleFavorite={toggleFavorite}
-                      />
-                    ))}
                 </>
               }
             />

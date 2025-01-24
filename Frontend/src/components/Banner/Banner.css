@@ -66,6 +66,7 @@
 
 @media screen and (max-width: 600px ) {
   .banner {
+    text-align: center;
     max-width: 100%;
     img {
 
@@ -73,11 +74,12 @@
       object-position: 0;
     }
     h1 {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
     }
     .title-banner {
       color:#fff;
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-transform: uppercase;
     }
   }

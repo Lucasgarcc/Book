@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import SuspenseList from "../SuspenseList/SuspenseList";
+import './ChangeBook.css'
 import Input from "../Pages/Form/Input/Input";
 import "../Pages/Form/Form.css";
 import UseFetch from "../Hooks/UseFetch/UseFetch";
@@ -86,7 +87,7 @@ const ChangeBook = ({ categories }) => {
   };
 
   return (
-    <section className="form">
+    <section className="change-book">
       <form onSubmit={handleUpdate}>
         <h2>Atualizar informações do livro</h2>
         <Input
