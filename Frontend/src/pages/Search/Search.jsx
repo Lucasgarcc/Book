@@ -1,7 +1,7 @@
 import React from 'react';
 import './Search.css';
 import { IoSearchSharp } from 'react-icons/io5';
-import Category from '../../Category/Category';
+import Category from '../../components/Category/Category';
 
 const Search = ({ data, categories, deleteBook, handleColorCategory, toggleFavorite, loading, error }) => {
   const [search, setSearch] = React.useState('');

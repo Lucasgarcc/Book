@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../../Button/Button';
-import SuspenseList from '../../SuspenseList/SuspenseList';
+import Button from '../../components/Button/Button';
+import SuspenseList from '../../components/SuspenseList/SuspenseList';
 import Input from './Input/Input';
 import './Form.css';
-import UseFetch from '../../Hooks/UseFetch/UseFetch';
+import UseFetch from '../../components/Hooks/UseFetch/UseFetch';
 
 const Form = ({ registerBook, categories, registerCategory }) => {
   const [form, setForm] = React.useState({

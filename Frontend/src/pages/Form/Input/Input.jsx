@@ -17,7 +17,7 @@ const Input = ({ label, type, placeholder, requiredMessage, value, setValue, sho
           placeholder={placeholder}
           value={value} 
           onChange={handleChange} />
-        {showError && !value && <span className='error-message'>{requiredMessage}  
+          {showError && !value && <span className='error-message'>{requiredMessage}  
          <VsxIcon viewBox="0 0 20 24" iconName="Danger"  type="outline" size="12.5" color="#ff8800"/>
         </span>}
       </div>
