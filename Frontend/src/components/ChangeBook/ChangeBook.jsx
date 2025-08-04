@@ -2,8 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import SuspenseList from "../SuspenseList/SuspenseList";
 import './ChangeBook.css'
-import Input from "../Pages/Form/Input/Input";
-import "../Pages/Form/Form.css";
+import "../../pages/Form/Form.css";
 import UseFetch from "../Hooks/UseFetch/UseFetch";
 
 const ChangeBook = ({ categories }) => {

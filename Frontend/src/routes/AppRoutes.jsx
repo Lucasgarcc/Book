@@ -1,13 +1,14 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-import Menu from "../Menu/Menu";
-import Footer from "../Footer/Footer";
-import Banner from "../Banner/Index";
-import Register from "../Pages/Form/Form";
-import Category from "../Category/Category";
-import Emphasis from "../Emphasis/Emphasis";
-import Detail from "../Emphasis/Detail/Detail";
-import Search from "../Pages/Search/Search";
+import Menu from "../components/Menu/Menu";
+import Footer from "../components/Footer/Footer";
+import Banner from "../components/Banner/Index";
+import Register from "../pages/Form/Form";
+import Category from "../components/Category/Category";
+import Emphasis from "../components/Emphasis/Emphasis";
+import Detail from "../components/Emphasis/Detail/Detail";
+import Search from "../pages/Search/Search";
+import Loading from "../components/Loading/Loading";
 
 const AppRoutes = ({
   categories,
@@ -21,6 +22,7 @@ const AppRoutes = ({
   toggleFavorite,
 
 }) => {
+
   return (
     <>
       <Menu />
@@ -37,13 +39,13 @@ const AppRoutes = ({
             }
           >
             {/* Rotas aninhadas */}
-            <Route
+   <Route
               index
               element={
                 <>
                   <Banner />
                   <Detail />
-                  {loading && <p style={{ color: "#000" }}>Carregando...</p>}
+                  {loading && <Loading /> }
                   {error && <span style={{ color: "red" }}>{error}</span>}
                   {!loading && data && (
                     <Emphasis
@@ -61,7 +63,7 @@ const AppRoutes = ({
                     />
                   )}
                   <h2 className="title">Recomenda Livros</h2>
-                  {loading && <p style={{ color: "#000" }}>Carregando...</p>}
+                  {loading && <Loading />}
                   {error && <span style={{ color: "red" }}>{error}</span>}
                   {!loading &&
                     data &&

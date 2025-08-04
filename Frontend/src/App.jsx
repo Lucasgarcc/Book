@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { v4 as uuidv4 } from 'uuid';
 import UseFetch from './components/Hooks/UseFetch/UseFetch';
-import AppRoutes from './components/Routes/AppRoutes';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   const [categories, setCategories] = React.useState([
